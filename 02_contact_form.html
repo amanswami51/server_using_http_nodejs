@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        h1 {
+            color: red;
+            text-align: left;
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 30px;
+        }
+
+        form {
+            background-color: lightblue;
+            border: 1px solid black;
+            margin: 20px;
+            border-radius: 5px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: greenyellow;
+            border: none;
+            color: black;
+            width: 30%;
+            padding: 10px;
+            font-size: 30px;
+            border-radius: 5;
+            cursor: zoom-out;
+        }
+
+        #form_heading {
+            line-height: 0.1;
+            background-color: greenyellow;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .p1 {
+            padding: 15px;
+        }
+
+        span input {
+            width: 100%;
+            font-size: 20px;
+            line-height: 2;
+        }
+
+        input[type="submit"]:hover {
+            background-color: green;
+        }
+
+        input[type="reset"]:hover {
+            background-color: orangered;
+        }
+
+        /**************navigation bar css**************/
+        .nav a {
+            display: none;
+        }
+
+        .nav .icon {
+            float: right;
+            color: yellow;
+            background-color: black;
+            display: block;
+            padding: 6px 14px 3px 14px;
+            margin: -44px 0px 0px 1px;
+            font-size: 31px;
+            position: sticky;
+            top: 0;
+        }
+
+        /*select icon, apply css when icon is onclick*/
+        .nav.click .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 31px;
+            padding: 6px 14px 3px 14px;
+            margin: 0px 0px 0px 1px;
+        }
+
+        /*select nav tag, apply css when icon is onclick*/
+        .nav.click {
+            background-color: #333;
+            /*3*/
+            overflow: hidden;
+            /*6*/
+            position: relative;
+            /*7*/
+            top: 0px;
+            /*8*/
+        }
+
+        /*select a tag, apply css when icon is onclick*/
+        .nav.click a {
+            text-decoration: none;
+            /*1*/
+            color: #f2f2f2;
+            /*2*/
+            padding: 14px 16px;
+            /*4*/
+            float: none;
+            /*5*/
+            display: block;
+            text-align: left;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div id="form_heading">
+            <h1>Contact Form</h1>
+            <p>Fill all information carefully</p>
+        </div>
+        <div class="nav" id="navid">
+            <a href="/" target="_blank">Home</a>
+            <a href="/contect" target="_blank">contect information</a>
+            <a href="/payment" target="_blank" class="login">payment form</a>
+            <a href="/about" target="_blank">About Founder</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <p class="p1">
+            <span>
+                First_Name : <input type="text" id="sname" name="fname" placeholder="Rana"> <br>
+                Second_name : <input type="text" id="sname" name="sname" placeholder="Rajput"> <br>
+                Email : <input type="email" name="email" id="email" placeholder="king@gmail.com"> <br>
+                Mobile_No. : <input type="text" name="phonenum" id="phone" placeholder="8824124578"> <br>
+                Massage : <br> <textarea name="massage" id="massage" cols="80" rows="20"
+                    placeholder="Introduced your self"></textarea> <br>
+                DOB : <input type="date" name="DOB" id="DOB"> <br>
+            </span> <br>
+            <input type="submit" value="Send"> <input type="reset" value="reset">
+
+        </p>
+    </form>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("navid");
+            if (x.className === "nav") {
+                x.className += " click";
+            } else {
+                x.className = "nav";
+            }
+        }
+    </script>
+</body>
+
+</html>

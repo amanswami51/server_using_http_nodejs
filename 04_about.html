@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+                /**************navigation bar css**************/
+                .nav a {
+                    display: none;
+                }
+                .nav .icon {
+                    float: right;
+                    color: yellow;
+                    background-color: black;
+                    display: block;
+                    padding: 6px 14px 3px 14px;
+                    margin: -13px 0px 0px 1px;
+                    font-size: 31px;
+                    position: sticky;
+                    top: 0;
+                }
+                /*select icon, apply css when icon is onclick*/
+                .nav.click .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    font-size: 31px;
+                    padding: 6px 14px 3px 14px;
+                    margin: 0px 0px 0px 1px;
+                }
+                
+                /*select nav tag, apply css when icon is onclick*/
+                .nav.click {
+                    background-color: #333; /*3*/
+                    overflow: hidden;         /*6*/
+                    position: sticky;         /*7*/
+                    top: 0px;                 /*8*/
+                }
+                
+                /*select a tag, apply css when icon is onclick*/
+                .nav.click a {
+                    text-decoration: none;  /*1*/
+                    color: #f2f2f2;       /*2*/
+                    padding: 14px 16px;     /*4*/
+                    float: none;            /*5*/
+                    display: block;
+                    text-align: left;
+                    font-size: 17px;
+                }
+    </style>
+</head>
+<body>
+    <div class="nav" id="navid">
+        <a href="/" target="_blank">Home</a>
+        <a href="/contect" target="_blank">contect information</a>
+        <a href="/payment" target="_blank" class="login">payment form</a>
+        <a href="/about" target="_blank">About Founder</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <h1>This is about page of website</h1>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("navid");
+            if (x.className === "nav") {
+                x.className += " click";
+            } else {
+                x.className = "nav";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        h1{
+            color: blue;
+            font-size: 100px;
+            text-align: center;
+        }
+        
+        #address{
+            color:red;
+            font-size: xx-large;
+            width: 100%;
+        }
+        form {
+            padding: 15px;
+            margin: 0px;
+            border: 1px solid grey;
+            background-color: #0fea343a;
+            border-radius: 4px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: x-large;
+        }
+        
+        input[type="submit"],input[type="reset"] {
+            background-color: rgb(227, 235, 14);
+            border: none;
+            border-radius: 4px;
+            font-size: 20px;
+            padding: 12px;
+            margin: 2px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        input[type="submit"]:hover,input[type="reset"]:hover{
+            background-color: orange;
+        }
+        
+        input[type="text"],
+        input[type="radio"], 
+        input[type="email"],
+        input[type="number"],
+        input[type="password"],
+        input[type="date"], 
+        textarea,
+        select {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid blueviolet;
+                border-radius: 4px;
+                margin: 10px;       
+        }
+        fieldset{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid blueviolet;
+            border-radius: 4px;
+            margin: 10px;
+            background-color: white;
+        }
+
+
+                /**************navigation bar css**************/
+                .nav a {
+                    display: none;
+                }
+                .nav .icon {
+                    float: right;
+                    color: yellow;
+                    background-color: black;
+                    display: block;
+                    padding: 6px 14px 3px 14px;
+                    margin: 0px 0px 0px 1px;
+                    font-size: 31px;
+                    position: sticky;
+                    top: 0;
+                }
+                /*select icon, apply css when icon is onclick*/
+                .nav.click .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    font-size: 31px;
+                    padding: 6px 14px 3px 14px;
+                    margin: 0px 0px 0px 1px;
+                }
+                
+                /*select nav tag, apply css when icon is onclick*/
+                .nav.click {
+                    background-color: #333; /*3*/
+                    overflow: hidden;         /*6*/
+                    position: relative;         /*7*/
+                    top: 0px;                 /*8*/
+                }
+                
+                /*select a tag, apply css when icon is onclick*/
+                .nav.click a {
+                    text-decoration: none;  /*1*/
+                    color: #f2f2f2;       /*2*/
+                    padding: 14px 16px;     /*4*/
+                    float: none;            /*5*/
+                    display: block;
+                    text-align: left;
+                    font-size: 17px;
+                }
+        
+    </style>
+</head>
+<body>
+    <div class="nav" id="navid">
+        <a href="/" target="_blank">Home</a>
+        <a href="/contect" target="_blank">contect information</a>
+        <a href="/payment" target="_blank" class="login">payment form</a>
+        <a href="/about" target="_blank">About Founder</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <form action="">
+        <h1>Payment form</h1>
+        <p>required fields are followed by *</p>
+        <h2>Contact Information</h2>
+        <p>Name: *<input type="text" name="name" placeholder="aman" required> </p>
+        <p>
+        <fieldset>
+            <legend>Gender</legend>
+                Male <input type="radio" name="gender" id="male"> female<input type="radio" name="gender" id="female">
+        </fieldset>
+        </p>
+        <p>Address:<textarea name="address" id="address" cols="100" rows="7" placeholder="Enter your address"></textarea></p>
+        <p>Email: *<input type="email" name="email" id="email" placeholder="123ramramji456@gmial.com" required></p>
+        <p>Pincode: <input type="number" name="pincode" id="pincode" placeholder="335804"></p>
+        <h2>Payment Information</h2>
+        <p>Card Type:*
+            <select name="card_type" id="card_type" required>
+                <option value="">--Select a card Type--</option>
+                <option value="visa">visa</option>
+                <option value="rupay">rupay</option>
+                <option value="mastercard">mastercard</option>
+            </select>
+        </p>
+        <p>
+            Card Number *<input type="number" name="card_number" id="card_number" required>
+        </p>
+        <p>
+            Expiration Date: *<input type="date" name="exp_date" id="exp_date" required>        
+        </p>
+        <p>CVV *<input type="password" name="CVV" id="CVV" required></p>
+        <input type="submit" value="Pay Now">
+        <input type="reset" value="Reset">
+
+
+
+    </form>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("navid");
+            if (x.className === "nav") {
+                x.className += " click";
+            } else {
+                x.className = "nav";
+            }
+        }
+    </script>
+</body>
+</html>
